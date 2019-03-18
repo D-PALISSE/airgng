@@ -1,0 +1,13 @@
+{
+  "name": "airgng",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^4.0.2",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.2.1"
+  }
+}
