@@ -1,0 +1,6 @@
+Here should all the goats of the current user appear
+<br>
+<% @my_goats.each do |my_goat| %>
+  <%= cl_image_tag my_goat.photo, height: 300, width: 400, crop: :fill %>
+  <p><%= my_goat.name %></p>
+<% end %>
