@@ -1,14 +1,3 @@
 // Import page-specific CSS files here.
 @import "home";
-
-.results {
-  h2 {
-    font-size: 30px;
-    font-weight: lighter;
-  }
-}
-
-.card {
-  width: 300px;
-  margin-top: 20px;
-}
+@import "goats-index"
