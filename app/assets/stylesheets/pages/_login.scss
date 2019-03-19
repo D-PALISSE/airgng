@@ -1,0 +1,52 @@
+.background-image {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.log-container {
+  padding: 20px;
+  a {
+    text-decoration: none;
+    color: rgb(60, 60, 60);
+  }
+}
+
+.log-div {
+  // margin-top: 150px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  color: #E27E7E;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.btn-login {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.goat-logo-65 {
+  width: 65px;
+}
+
+.login-title-size {
+  font-size: 25px;
+}
+
+.logo-login {
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
+
+.form-control:focus{
+  box-shadow: 0 0 0 0.2rem rgba(226, 126, 126, 0.3);
+  border-color: #E27E7E
+}
+
+.checkbox-remenber .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: #E27E7E;
+}
