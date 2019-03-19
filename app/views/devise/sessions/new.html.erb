@@ -1,20 +1,24 @@
-<h2>Log in</h2>
+<div class="background-image"  style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= image_path "background.jpg" %>);">
+  <div class="container">
+    <div class="col-sm-4 offset-4 log-div">
+      <div class="logo-login"><center><%= image_tag "goat_logo.png", class: "goat-logo-65" %> <span class="color-nav login-title-size">Login</span><center></div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+        required: false,
+        autofocus: true,
+        input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+        required: false,
+        input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class: "btn btn-info btn-login" %>
+      </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
