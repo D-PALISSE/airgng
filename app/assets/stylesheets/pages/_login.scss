@@ -1,14 +1,13 @@
 .background-image {
   width: 100%;
-  height: 93.5vh;
-  position: relative;
+  height: calc(100vh - 60px);
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
 }
 
 .log-container {
-  position: relative;
-  top: 150px;
   padding: 20px;
   a {
     text-decoration: none;
