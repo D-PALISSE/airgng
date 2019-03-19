@@ -2,7 +2,7 @@
   <div class="container log-container-signup">
         <div class="logo-login"><center><%= image_tag "goat_logo.png", class: "goat-logo-65" %> <span class="color-nav login-title-size">Sign up</span><center></div>
     <div class="row">
-      <div class="col-sm-6 log-div">
+      <div class="col-sm-6 log-div-signup">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
@@ -19,7 +19,7 @@
           input_html: { autocomplete: "new-password" } %>
         </div>
       </div>
-      <div class="col-sm-6 log-div">
+      <div class="col-sm-6 log-div-signup">
         <div class="form-inputs">
           <%= f.input :first_name %>
           <%= f.input :last_name %>
@@ -29,8 +29,8 @@
         </div>
       </div>
     </div>
-        <center><div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "btn btn-info btn-login" %>
+        <center><div class="form-actions mt-2">
+          <%= f.button :submit, "Sign up", class: "btn btn-info" %>
         <span style="color: #E27E7E;">or <%= render "devise/shared/links" %></center></div>
         <% end %>
   </div>
