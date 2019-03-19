@@ -47,3 +47,7 @@
   box-shadow: 0 0 0 0.2rem rgba(226, 126, 126, 0.3);
   border-color: #E27E7E
 }
+
+.checkbox-remenber .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: #E27E7E;
+}
