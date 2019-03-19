@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 93.5vh;
+  a {
+    font-size: 30px;
+    font-family: "Raleway", "Helvetica", "sans-serif";
+    font-weight: 500;
+  }
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 82px;
+  font-weight: bold;
+}
+
+.banner h2 {
+  font-size: 60px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
