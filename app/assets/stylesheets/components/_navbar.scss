@@ -1,6 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  min-height: 60px;
+  height: 6.5vh;
+  a {
+    text-decoration: none;
+    color: #E27E7E;
+  }
+  ul {
+    list-style: none;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +18,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.color-nav {
+  color: #E27E7E;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.goat-logo {
+  width: 45px;
 }
