@@ -3,7 +3,8 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 93.5vh;
+  min-height: 600px;
+  height: calc(100vh - 60px);
   a {
     font-size: 30px;
     font-family: "Raleway", "Helvetica", "sans-serif";
