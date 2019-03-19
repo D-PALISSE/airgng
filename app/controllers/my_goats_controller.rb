@@ -1,4 +1,8 @@
 class MyGoatsController < ApplicationController
+  def index
+    @my_goats = Goat.where(owner: current_user)
+  end
+
   def new
     @goat = Goat.new
   end
