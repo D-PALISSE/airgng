@@ -12,11 +12,16 @@
     <% @goats.each do |goat| %>
       <div class="col-sm">
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-picture">
+            <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+          </div>
           <div class="card-body">
-            <h5 class="card-title"> <%= @goat.name %> </h5>
-            <p class="card-text">Some quick example text to build on the @goat.name and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title"> <%= goat.name %> </h5>
+            <p class="card-text"> <%= goat.description %> </p>
+            <div class="call-to-action">
+              <h5 class="daily-price"> <span><%= goat.daily_price %></span> €/per day</h5>
+              <a href="#" class="btn btn-outline-primary">Rent it</a>
+            </div>
           </div>
         </div>
       </div>
