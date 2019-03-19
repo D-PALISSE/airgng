@@ -9,8 +9,6 @@
 .log-container {
   position: relative;
   top: 150px;
-  background-color: white;
-  border-radius: 8px;
   padding: 20px;
   a {
     text-decoration: none;
@@ -20,6 +18,8 @@
 
 .log-div {
   // margin-top: 150px;
+  background-color: white;
+  border-radius: 8px;
   padding: 30px;
   color: #E27E7E;
   font-family: "Raleway", "Helvetica", "sans-serif";
