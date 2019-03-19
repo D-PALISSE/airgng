@@ -3,4 +3,6 @@ class Goat < ApplicationRecord
   has_many :bookings
 
   validates_presence_of :name, :photo, :specie, :description, :address, :daily_price
+
+  mount_uploader :photo, PhotoUploader
 end
