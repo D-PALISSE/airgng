@@ -1,25 +1,35 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="background-image"  style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= image_path "background.jpg" %>);">
+  <div class="container log-container">
+        <div class="logo-login"><center><%= image_tag "goat_logo.png", class: "goat-logo-65" %> <span class="color-nav login-title-size">Sign up</span><center></div>
+    <div class="row">
+      <div class="col-sm-6 log-div">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+          required: true,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+          required: true,
+          input_html: { autocomplete: "new-password" } %>
+        </div>
+      </div>
+      <div class="col-sm-6 log-div">
+        <div class="form-inputs">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :description %>
+          <%= f.input :avatar %>
+        </div>
+      </div>
+    </div>
+        <center><div class="form-actions">
+          <%= f.button :submit, "Sign up", class: "btn btn-info btn-login" %>
+        <span style="color: #E27E7E;">or <%= render "devise/shared/links" %></center></div>
+        <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

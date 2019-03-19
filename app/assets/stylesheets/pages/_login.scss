@@ -6,9 +6,12 @@
   background-position: center;
 }
 
-.container {
+.log-container {
   position: relative;
   top: 150px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
   a {
     text-decoration: none;
     color: rgb(60, 60, 60);
@@ -18,8 +21,6 @@
 .log-div {
   // margin-top: 150px;
   padding: 30px;
-  background-color: white;
-  border-radius: 8px;
   color: #E27E7E;
   font-family: "Raleway", "Helvetica", "sans-serif";
 }
@@ -38,8 +39,8 @@
 }
 
 .logo-login {
-  margin-top: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  padding-top: 20px;
 }
 
 .form-control:focus{
