@@ -1,7 +1,8 @@
 puts 'Cleaning DB...'
+Booking.destroy_all
 Goat.destroy_all
 User.destroy_all
-Booking.destroy_all
+
 
 puts 'Creating new goats'
 
