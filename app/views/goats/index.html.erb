@@ -18,7 +18,7 @@
             <p class="card-text"> <%= goat.specie.capitalize %> </p>
             <div class="call-to-action">
               <h5 class="daily-price"> <span><%= goat.daily_price %></span> €/per day</h5>
-              <a href="#" class="btn btn-outline-primary">Rent it</a>
+              <%= link_to "See details", goat_path(goat.id), class: "btn btn-info btn-outline-primary" %>
             </div>
           </div>
         </div>
