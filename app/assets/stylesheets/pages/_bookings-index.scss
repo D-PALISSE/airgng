@@ -1,0 +1,58 @@
+.booking-card {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  margin: 30px 0;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px lightgrey;
+
+  .card-img-top{
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .card-title {
+    font-weight: bolder;
+    color: #E27E7E;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+  .specie {
+    color: black;
+    font-size: 1rem;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .bookings-dates {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+  .validation {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    justify-content: space-around;
+
+
+    .pending {
+      font-weight: bolder;
+      // color: #ffff84;
+    }
+
+    .validate {
+      font-weight: bolder;
+      // color: #81ff7f;
+    }
+
+    .denied {
+      font-weight: bolder;
+      // color: #ff4242;
+    }
+  }
+}
+
+
