@@ -55,23 +55,22 @@
   display: flex;
   justify-content: space-between;
   // align-items: flex-end;
+}
 
-
-
-  .btn-outline-primary {
-    border-radius: 8px;
-    position: absolute;
-    bottom: 16px;
-    right: 20px;
-    background-color: $pink;
-    color: white;
-    border-color: #E27E7E;
-    &:hover {
-    color: $pink;
-    border-color: #E27E7E;
-    background-color: white;
-    }
+.btn-outline-primary {
+  border-radius: 8px;
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  background-color: $pink;
+  color: white;
+  border-color: #E27E7E;
+  &:hover {
+  color: $pink;
+  border-color: #E27E7E;
+  background-color: white;
   }
+}
 
 
 
