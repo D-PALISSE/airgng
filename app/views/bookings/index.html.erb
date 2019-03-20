@@ -1,0 +1,55 @@
+<div class="container card-container">
+  <div class="results">
+  <h2>Your goat bookings</h2>
+  <% if @bookings.empty? %>
+    <p>You didn't book any goats</p>
+  <% else %>
+  <!-- <p>for: <strong>Today</strong></p> -->
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="booking-card">
+          <div class="card-picture">
+            <%= cl_image_tag booking.goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+          </div>
+          <div class="card-body-booking">
+            <h5 class="card-title"> <%= booking.goat.name %> </h5>
+            <p class="card-text specie"> <%= booking.goat.specie.capitalize %> </p>
+            <div class="call-to-action">
+              <h5 class="bookings-dates">From <strong> <%= booking.beginning_date %> </strong> , To <strong> <%= booking.end_date %> </strong></h5>
+              <h5 class="btn btn-outline-primary validation">  Status:
+                <% if booking.status == "pending" %>
+                  <span class="pending"> <%= booking.status %> </span>
+                <% elsif booking.status == "denied" %>
+                  <span class="denied"> <%= booking.status %> </span>
+                <% else %>
+                  <span class="validate"> <%= booking.status %></span>
+                <% end %>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+</div>
+<div class="container card-container">
+  <div class="results">
+  <h2>Your goats' requests</h2>
+</div>
+<div>
+  <% @requests.each do |request| %>
+      <div class="card-product">
+        <%= cl_image_tag request.goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+        <div class="card-product-infos">
+          <h2><%= request.goat.name %> </h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
+
