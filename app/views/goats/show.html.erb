@@ -1,4 +1,5 @@
-<div class="container container-show-goat">
+<div class="show-goat-wrapper">
+  <div class="container">
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12">
         <div class="card-show">
@@ -19,12 +20,11 @@
             <h2 class="card-title-show"> <%= @goat.name %></h2>
             <p class="card-text-show"><%= @goat.specie.capitalize %></p>
             <p class="card-text-description"><%= @goat.description %></p>
-            <a href="#" class="btn btn-outline-primary">Book our goat</a>
+            <%= link_to "Book our goat" , new_goat_booking_path, class: "btn btn-outline-primary" %>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
-
-
 
