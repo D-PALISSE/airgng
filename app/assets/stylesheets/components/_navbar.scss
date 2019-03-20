@@ -1,3 +1,6 @@
+.my-goats-link {
+  color: #E27E7E;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -26,4 +29,13 @@
 
 .goat-logo {
   width: 45px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #E27E7E;
+  // border-bottom: 3px solid #E27E7E;
 }
