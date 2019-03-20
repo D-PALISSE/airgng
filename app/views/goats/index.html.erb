@@ -8,7 +8,7 @@
 </div>
   <div class="row">
     <% @goats.each do |goat| %>
-      <div class="col-sm-3">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
         <div class="card">
           <div class="card-picture">
             <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
