@@ -1,11 +1,61 @@
 .results {
+
   h2 {
     font-size: 30px;
     font-weight: lighter;
+  }
+
+  p {
+    font-size: 18px;
+    color: #E27E7E;
   }
 }
 
 .card {
   width: 300px;
+  height: 440px;
   margin-top: 20px;
+  border-radius: 15px;
+
+  .card-img-top{
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .card-title {
+    font-weight: bolder;
+    color: #E27E7E;
+  }
+
+  .daily-price {
+    margin-bottom: 0px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+
+    span {
+      font-size: 30px;
+      font-weight: bolder;
+    }
+  }
+}
+
+.card-body {
+  position: relative;
+}
+
+.call-to-action {
+  display: flex;
+  justify-content: space-between;
+  // align-items: flex-end;
+
+
+  .btn-outline-primary {
+    color: #E27E7E;
+    border-color: #E27E7E;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+  }
 }
