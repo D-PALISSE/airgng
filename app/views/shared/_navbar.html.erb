@@ -17,13 +17,13 @@
         <li class="nav-item <%= mygoats_class %>">
           <%= link_to "My goats", my_goats_path, class: "nav-link" %>
         </li>
-        <% if params[:controller] == "pages" && params[:action] == "home" %>
+        <% if params[:controller] == "bookings" && params[:action] == "index" %>
           <% booking_class = "active"  %>
         <% else %>
           <% booking_class = "inactive" %>
         <% end %>
         <li class="nav-item <%= booking_class %> my-goats-link">
-          <%= link_to "Bookings", root_path, class: "nav-link" %>
+          <%= link_to "Bookings", bookings_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
