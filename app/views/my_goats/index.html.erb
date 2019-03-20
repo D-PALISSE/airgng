@@ -1,0 +1,30 @@
+  <div class="mygoats-title">
+<!--   <h2>Search results for:</h2>
+  <p><strong>Nantes</strong>, from 05/04/2019 to 10/04/2019</p> -->
+  <center><%= image_tag "goat_logo.png", class: "goat-logo-65" %><h1>My cheptel</h1>
+  </center>
+  <div class="link-to-new-goat"><%= link_to new_my_goat_path, class: "btn btn-info btn-new-goat" do  %>
+    <i class="fas fa-plus"></i>&nbsp Add a new goat
+  <% end %>
+  </div>
+</div>
+<div class="container card-container">
+  <div class="row">
+    <% @my_goats.each do |goat| %>
+            <%= link_to goat_path(goat) do %>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="my-goats-card">
+          <div class="card-picture">
+            <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> <%= goat.name %> </h5>
+            <p class="card-text"> <%= goat.specie.capitalize %> </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

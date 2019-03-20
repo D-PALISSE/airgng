@@ -1,0 +1,77 @@
+.results {
+    margin-top: 25px;
+
+  h2 {
+    font-size: 30px;
+    font-weight: lighter;
+  }
+
+  p {
+    font-size: 18px;
+    color: #E27E7E;
+  }
+}
+
+.card-container {
+  max-width: 1400px;
+}
+
+.card {
+  width: 300px;
+  height: 330px;
+  margin: 30px 0;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px lightgrey;
+  .card-img-top{
+    border-radius: 15px 15px 0px 0px;
+  }
+
+}
+.daily-price {
+  margin-bottom: 0px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+
+  span {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+}
+
+.card-title {
+    font-weight: bolder;
+    color: #E27E7E;
+    margin-bottom: 0;
+}
+
+
+.card-body {
+  position: relative;
+}
+
+.call-to-action {
+  display: flex;
+  justify-content: space-between;
+  // align-items: flex-end;
+
+
+
+  .btn-outline-primary {
+    border-radius: 8px;
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    background-color: $pink;
+    color: white;
+    border-color: #E27E7E;
+    &:hover {
+    color: $pink;
+    border-color: #E27E7E;
+    background-color: white;
+    }
+  }
+
+
+

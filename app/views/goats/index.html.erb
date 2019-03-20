@@ -1,0 +1,29 @@
+
+<div class="container card-container">
+  <div class="results">
+<!--   <h2>Search results for:</h2>
+  <p><strong>Nantes</strong>, from 05/04/2019 to 10/04/2019</p> -->
+  <h2>All goats available</h2>
+  <p>for: <strong>Today</strong></p>
+</div>
+  <div class="row">
+    <% @goats.each do |goat| %>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
+          <div class="card-picture">
+            <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> <%= goat.name %> </h5>
+            <p class="card-text"> <%= goat.specie.capitalize %> </p>
+            <div class="call-to-action">
+              <h5 class="daily-price"> <span><%= goat.daily_price %></span> €/per day</h5>
+              <a href="#" class="btn btn-outline-primary">Rent it</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

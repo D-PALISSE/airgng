@@ -34,5 +34,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:status, :beginning_date, :end_date, :total_amount, :goat_id, :user_id)
+    # @bookings = Booking.where user_id: current_user.id
+    @bookings = current_user.bookings
+    @goats = current_user.goats
+    @requests = current_user.requests.uniq
   end
 end

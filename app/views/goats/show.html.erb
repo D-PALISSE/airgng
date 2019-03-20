@@ -1,0 +1,30 @@
+<div class="container container-show-goat">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12">
+        <div class="card-show">
+          <div class="card-show-goat">
+            <div class="card-picture">
+              <%= cl_image_tag @goat.photo, width: 300, height: 250, crop: :fill, class: 'card-img-top' %>
+            </div>
+            <div class="card-body">
+              <h5 class="daily-price-show"> <span><%= @goat.daily_price %></span> €/per day</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-6 col-xs-12">
+        <div class="card-show-goat csg-2">
+          <div class="card-show-goat-details">
+            <%= cl_image_tag @goat.owner.avatar, class: "avatar-bordered-large-owner" %>
+            <h2 class="card-title-show"> <%= @goat.name %></h2>
+            <p class="card-text-show"><%= @goat.specie.capitalize %></p>
+            <p class="card-text-description"><%= @goat.description %></p>
+            <a href="#" class="btn btn-outline-primary">Book our goat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,20 @@
+<div class="background-image"  style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= image_path "new-goat-banner.jpg" %>);">
+  <div class="container log-container">
+    <div class="col-sm-6 offset-3 log-div">
+        <div class="logo-login"><center><%= image_tag "goat_logo.png", class: "goat-logo-65" %> <span class="color-nav login-title-size">Add new goat</span></center></div>
+        <%= simple_form_for @goat, url: my_goats_path do |f|%>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :specie %>
+          <%= f.input :description %>
+          <%= f.input :address %>
+          <%= f.input :daily_price %>
+          <%= f.input :photo %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, 'Add a goat', class: 'btn btn-info' %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

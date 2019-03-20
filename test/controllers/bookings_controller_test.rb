@@ -20,5 +20,7 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     get bookings_create_url
     assert_response :success
   end
-
+  # test "the truth" do
+  #   assert true
+  # end
 end
