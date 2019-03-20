@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :goats
   has_many :bookings
 
+  has_many :requests, through: :goats, source: :bookings
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

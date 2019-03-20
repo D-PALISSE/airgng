@@ -1,6 +1,9 @@
 <div class="container card-container">
   <div class="results">
   <h2>Your goat bookings</h2>
+  <% if @bookings.empty? %>
+    <p>You didn't book any goats</p>
+  <% else %>
   <!-- <p>for: <strong>Today</strong></p> -->
   <div class="row">
     <% @bookings.each do |booking| %>
@@ -29,9 +32,24 @@
       </div>
     <% end %>
   </div>
-  <div class="container card-container">
-    <div class="results">
-    <h2>Your Cheptel</h2>
-  </div>
+  <% end %>
 </div>
+</div>
+<div class="container card-container">
+  <div class="results">
+  <h2>Your goats' requests</h2>
+</div>
+<div>
+  <% @requests.each do |request| %>
+      <div class="card-product">
+        <%= cl_image_tag request.goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+        <div class="card-product-infos">
+          <h2><%= request.goat.name %> </h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
 
