@@ -9,11 +9,21 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <% if params[:controller] == "my_goats" && params[:action] == "index" %>
+          <% mygoats_class = "active"  %>
+        <% else %>
+          <% mygoats_class = "inactive" %>
+        <% end %>
+        <li class="nav-item <%= mygoats_class %>">
           <%= link_to "My goats", my_goats_path, class: "nav-link" %>
         </li>
-        <li class="nav-item inactive my-goats-link">
-          <%= link_to "Bookings", "#", class: "nav-link" %>
+        <% if params[:controller] == "pages" && params[:action] == "home" %>
+          <% booking_class = "active"  %>
+        <% else %>
+          <% booking_class = "inactive" %>
+        <% end %>
+        <li class="nav-item <%= booking_class %> my-goats-link">
+          <%= link_to "Bookings", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
