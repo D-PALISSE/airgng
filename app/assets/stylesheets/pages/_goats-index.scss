@@ -13,8 +13,8 @@
 
 .card {
   width: 300px;
-  height: 440px;
-  margin-top: 20px;
+  height: 330px;
+  margin: 30px 0;
   border-radius: 15px;
 
   .card-img-top{
@@ -24,6 +24,7 @@
   .card-title {
     font-weight: bolder;
     color: #E27E7E;
+    margin-bottom: 0;
   }
 
   .daily-price {
