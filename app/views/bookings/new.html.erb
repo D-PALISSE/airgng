@@ -1,0 +1,20 @@
+<%= simple_form_for [@goat, @booking] do |f| %>
+  You're on your way to book <%= @goat.name %>
+
+  <div class="form-inputs">
+    <input type="text" class="datepicker" data-daily-price='<%= @goat.daily_price %>'>
+    <%= f.input :beginning_date, as: :hidden %>
+    <%= f.input :end_date, as: :hidden %>
+  </div>
+
+  <div>
+    Total amount : <span id='total_amount'>0</span> €
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, 'Send booking request', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<!-- We also need to print the Total amount in the database -->
+<!-- Add eventlistener if date changes -->
+<!-- input_html: { class: "datepicker", data: {price: @goat.daily_price}} -->

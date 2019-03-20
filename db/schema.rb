@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_03_18_174051) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "goat_id"
+    t.bigint "user_id" # c'est le user qui FAIT le booking
+    t.bigint "goat_id" # permet de voir quel user recevra le booking
     t.string "status"
     t.date "beginning_date"
     t.date "end_date"
