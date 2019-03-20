@@ -37,5 +37,6 @@
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
   color: #E27E7E;
+  border-bottom: 2px solid $pink;
   // border-bottom: 3px solid #E27E7E;
 }
