@@ -26,25 +26,26 @@
     border-radius: 15px 15px 0px 0px;
   }
 
-  .card-title {
+}
+.daily-price {
+  margin-bottom: 0px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+
+  span {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+}
+
+.card-title {
     font-weight: bolder;
     color: #E27E7E;
     margin-bottom: 0;
-  }
-
-  .daily-price {
-    margin-bottom: 0px;
-    font-size: 12px;
-    position: absolute;
-    bottom: 16px;
-    left: 20px;
-
-    span {
-      font-size: 30px;
-      font-weight: bolder;
-    }
-  }
 }
+
 
 .card-body {
   position: relative;
@@ -54,6 +55,7 @@
   display: flex;
   justify-content: space-between;
   // align-items: flex-end;
+
 
 
   .btn-outline-primary {
@@ -70,4 +72,6 @@
     background-color: white;
     }
   }
-}
+
+
+
