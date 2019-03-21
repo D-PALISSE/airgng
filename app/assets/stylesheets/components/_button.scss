@@ -1,7 +1,4 @@
-.btn-flat-goat {
-  position: absolute;
-  bottom: 16px;
-  right: 20px;
+.btn-flat {
   color: white;
   padding: 8px 20px;
   border-radius: 10px;
@@ -11,7 +8,7 @@
   border: 1px solid $pink;
 }
 
-.btn-flat-goat:hover {
+.btn-flat:hover {
   background: white;
   color: $pink;
   text-decoration: none;
