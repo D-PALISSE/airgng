@@ -21,7 +21,7 @@
             <p class="card-text-show"><%= @goat.specie.capitalize %> </p>
             <p class="card-text-show card-location-show"><i class="fas fa-map-marker-alt"></i> <%= @goat.address.capitalize %> </p>
             <p class="card-text-description"><%= @goat.description %></p>
-            <%= link_to "Book our goat" , new_goat_booking_path(@goat.id), class: "btn-flat-goat" %>
+            <%= link_to "Book our goat" , new_goat_booking_path(@goat.id), class: "btn-flat btn-goat" %>
           </div>
         </div>
       </div>

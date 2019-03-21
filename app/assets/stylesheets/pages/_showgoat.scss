@@ -71,21 +71,8 @@ right: 15px;
 
 }
 
-.btn-flat-goat {
+.btn-goat {
   position: absolute;
   bottom: 16px;
   right: 20px;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 10px;
-  background: $pink;
-  border-color: $pink;
-  transition: background 0.3s ease;
-  border: 1px solid $pink;
-}
-
-.btn-flat-goat:hover {
-  background: white;
-  color: $pink;
-  text-decoration: none;
 }
