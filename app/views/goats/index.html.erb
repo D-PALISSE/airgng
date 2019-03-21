@@ -3,9 +3,9 @@
   <div class="results">
 <!--   <h2>Search results for:</h2>
   <p><strong>Nantes</strong>, from 05/04/2019 to 10/04/2019</p> -->
-  <h2>All goats available</h2>
-  <p>for: <strong>Today</strong></p>
-</div>
+    <h2>All goats available</h2>
+    <p>for: <strong>Today</strong></p>
+  </div>
   <div class="row">
     <% @goats.each do |goat| %>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
@@ -18,7 +18,7 @@
             <p class="card-text"> <%= goat.specie.capitalize %> </p>
             <div class="call-to-action">
               <h5 class="daily-price"> <span><%= goat.daily_price %></span> €/per day</h5>
-              <%= link_to "See details", goat_path(goat.id), class: "btn btn-info btn-outline-primary" %>
+              <%= link_to "See details", goat_path(goat.id), class: "btn-flat-goat" %>
             </div>
           </div>
         </div>
