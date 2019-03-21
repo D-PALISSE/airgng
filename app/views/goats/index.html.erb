@@ -3,8 +3,16 @@
   <div class="results">
 <!--   <h2>Search results for:</h2>
   <p><strong>Nantes</strong>, from 05/04/2019 to 10/04/2019</p> -->
-  <h2>All goats available</h2>
-  <p>for: <strong>Today</strong></p>
+  <h2>Available goats</h2>
+  <%= form_tag goats_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Filter by city"
+    %>
+  <% end %>
+  <!-- Si on a le temps, faire du JS pour modifier le place holder et le H2 après recherche -->
+  <!-- <p>for: <strong>Today</strong></p> -->
 </div>
   <div class="row">
     <% @goats.each do |goat| %>
