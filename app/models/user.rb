@@ -19,6 +19,8 @@ class User < ApplicationRecord
   private
 
   def set_default_avatar
-    update(avatar: File.open(Rails.root.join('app/assets/images/default-avatar.png')))
+    if avatar.file.nil?
+      update(avatar: File.open(Rails.root.join('app/assets/images/default-avatar.png')))
+    end
   end
 end
