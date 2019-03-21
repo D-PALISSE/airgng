@@ -1,5 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<div class="container container-user">
-  <%= cl_image_tag @user.avatar.url(:thumnail) %>
+<div class="profile-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "profile-bg.jpg" %>);">
+<div class="container-profile">
+  <center><%= image_tag "goat_logo.png", class: "goat-logo-65" %></center>
+    <div class="container-user">
+       <div class="logo-login"><center><span class="color-nav profile-title-size">
+         <%= @full_name %>
+       </span></center></div>
+     <div class="avatar-div">
+      <%= cl_image_tag @user.avatar.url(:thumnail), class: "profile-avatar" %>
+     </div>
+    </div>
+
+    <div class="profile-content-1">
+      <h1><i class="far fa-envelope"></i>&nbsp Email : &nbsp&nbsp<span><%= @user.email %></span></h1>
+      <h1><i class="fas fa-lock"></i>&nbsp Password : &nbsp&nbsp
+        <%= link_to edit_user_password_path do %>
+        <span class="change-password">Change password</span><%end%></h1>
+    </div>
+    <div class="profile-content-2">
+      <h1><i class="far fa-file-alt"></i>&nbsp Description : </h1><br>
+      <center><h3><%= @user.description %></h3></center>
+    </div>
+</div>
 </div>
