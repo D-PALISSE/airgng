@@ -18,7 +18,8 @@
           <div class="card-show-goat-details">
             <%= cl_image_tag @goat.owner.avatar, class: "avatar-bordered-large-owner" %>
             <h2 class="card-title-show"> <%= @goat.name %></h2>
-            <p class="card-text-show"><%= @goat.specie.capitalize %></p>
+            <p class="card-text-show"><%= @goat.specie.capitalize %> </p>
+            <p class="card-text-show card-location-show"><i class="fas fa-map-marker-alt"></i> <%= @goat.address.capitalize %> </p>
             <p class="card-text-description"><%= @goat.description %></p>
             <%= link_to "Book our goat" , new_goat_booking_path(@goat.id), class: "btn-flat-goat" %>
           </div>

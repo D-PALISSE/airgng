@@ -1,3 +1,12 @@
+.index-link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
 .results {
     margin-top: 25px;
 
@@ -27,6 +36,7 @@
   }
 
 }
+
 .daily-price {
   margin-bottom: 0px;
   font-size: 12px;
@@ -40,15 +50,26 @@
   }
 }
 
+.card-body {
+  position: relative;
+}
+
 .card-title {
     font-weight: bolder;
     color: #E27E7E;
     margin-bottom: 0;
 }
 
+.card-location {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+}
 
-.card-body {
-  position: relative;
+.card-location-show {
+  position: absolute;
+  bottom: 12px;
+  left: 4px;
 }
 
 .call-to-action {
