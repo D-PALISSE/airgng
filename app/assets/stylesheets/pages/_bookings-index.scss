@@ -43,32 +43,52 @@
     left: 5px;
     bottom: 20px;
     // margin-right: 30px;
+  }
+}
 
-    .status {
+.status {
       font-weight: bolder;
       margin-left: 20px;
       border-radius: 5px;
     }
 
-    .pending {
+.button-container {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.status-two {
+  font-weight: bolder;
+  // margin-left: 20px;
+  border-radius: 5px;
+}
+
+.black-typo {
+  color: #383838;
+}
+
+// .exception {
+//   margin-left: 100px;
+// }
+
+.pending {
         color: white;
         background-color: #FFC65A;
         padding: 0px 10px;
       }
 
-    .validated {
-        color: white;
-        background-color: #58d358;
-        padding: 0px 10px;
-      }
-
-    .denied {
-        color: white;
-        background-color: #ff5b5b;
-        padding: 0px 10px;
-      }
+.validated {
+    color: white;
+    background-color: #58d358;
+    padding: 0px 10px;
   }
-}
+
+.denied {
+    color: white;
+    background-color: #ff5b5b;
+    padding: 0px 10px;
+  }
 
 // .card-body-booking {
 //   background-color: white;
@@ -84,12 +104,26 @@
   align-items: center;
   margin-top: 40px;
   margin-bottom: 30px;
+  justify-content: space-around;
 
   .card-img-top {
   height: 100%;
   width: 120px;
   object-fit: cover;
   }
+
+  .card-product-infos {
+    margin-top: -8px;
+
+    .infos-text {
+      font-size: 16px;
+    }
+
+    .infos-dates {
+      font-size: 16px;
+    }
+  }
+
 }
 
 
@@ -108,25 +142,6 @@
   margin-top: 8px;
 }
 
-.card-product {
-  display: flex;
-  justify-content: space-around;
-
-  .card-product-infos {
-    margin-top: -8px;
-
-    .infos-text {
-      font-size: 16px;
-    }
-
-    .infos-dates {
-      font-size: 16px;
-    }
-  }
-
-
-
-}
 .goat-listing {
     margin-bottom: 100px;
 
