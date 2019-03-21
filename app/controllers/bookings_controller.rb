@@ -5,10 +5,8 @@ class BookingsController < ApplicationController
     @requests = current_user.requests
   end
 
-  def show
-    # show tous les bookings d'un user
-    # faire un distingo
-  end
+  # def show
+  # end
 
   def new
     @booking = Booking.new
@@ -16,18 +14,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # define @booking_duration here
-    # binding.pry
     @booking = Booking.new(booking_params)
-    # recuperer ici
-    # retravailler mes dates, faire total amount, mettre sur booking
-    @booking.status = 'pending'
-    @booking.beginning_date = params[:beginning_date]
-    @booking.end_date = params[:end_date]
-    raise
-    @booking.total_amount = 100
+    @goat = Goat.find(params[:goat_id])
+    assignations
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end
@@ -36,10 +27,15 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :beginning_date, :end_date, :total_amount, :goat_id, :user_id)
-    # @bookings = Booking.where user_id: current_user.id
-    @bookings = current_user.bookings
-    @goats = current_user.goats
-    @requests = current_user.requests.uniq
+    params.require(:booking).permit(:beginning_date, :end_date)
+  end
+
+  def assignations
+    @booking.user = current_user
+    @booking.goat = @goat
+    @booking.beginning_date = params[:booking][:beginning_date].to_date
+    @booking.end_date = params[:booking][:end_date].to_date
+    delta_days = (params[:booking][:end_date].to_date - params[:booking][:beginning_date].to_date).to_i
+    @booking.total_amount = delta_days * @goat.daily_price
   end
 end

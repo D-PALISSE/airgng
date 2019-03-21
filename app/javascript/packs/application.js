@@ -4,6 +4,8 @@ import 'flatpickr/dist/flatpickr.min.css'
 
 flatpickr(".datepicker", {
   mode: "range",
+  minDate: "today",
+  dateFormat: "d-m-Y",
   onChange: function(selectedDates, dateStr, instance) {
     // console.log(dateStr)
     // console.log(selectedDates)
