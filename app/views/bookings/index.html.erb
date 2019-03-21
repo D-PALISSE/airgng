@@ -1,8 +1,9 @@
 <div class="container card-container">
   <div class="results">
-  <h2>Your goat bookings</h2>
+  <h2>Your goat bookings:</h2>
   <% if @bookings.empty? %>
-    <p>You didn't book any goats</p>
+    <p>You didn't book any goat</p>
+    <div class="btn btn-outline-primary">Book a new Goat</div>
   <% else %>
   <!-- <p>for: <strong>Today</strong></p> -->
   <div class="row">
@@ -16,16 +17,17 @@
             <h5 class="card-title"> <%= booking.goat.name %> </h5>
             <p class="card-text specie"> <%= booking.goat.specie.capitalize %> </p>
             <div class="call-to-action">
-              <h5 class="bookings-dates">From <strong> <%= booking.beginning_date %> </strong> , To <strong> <%= booking.end_date %> </strong></h5>
-              <h5 class="btn btn-outline-primary validation">  Status:
+              <h5 class="bookings-dates">From <strong> <%= booking.beginning_date %> </strong> , To   <strong> <%= booking.end_date %> </strong></h5>
+              <div class="container validation">
+                <div>Status:</div>
                 <% if booking.status == "pending" %>
-                  <span class="pending"> <%= booking.status %> </span>
+                    <div class="status pending"> <%= booking.status.capitalize %> </div>
                 <% elsif booking.status == "denied" %>
-                  <span class="denied"> <%= booking.status %> </span>
+                    <div class="status denied"> <%= booking.status.capitalize %> </div>
                 <% else %>
-                  <span class="validate"> <%= booking.status %></span>
+                    <div class="status validated"> <%= booking.status.capitalize %>d </div>
                 <% end %>
-              </h5>
+              </div>
             </div>
           </div>
         </div>
@@ -35,18 +37,24 @@
   <% end %>
 </div>
 </div>
+<div class="line"></div>
 <div class="container card-container">
   <div class="results">
-  <h2>Your goats' requests</h2>
-</div>
-<div>
-  <% @requests.each do |request| %>
-      <div class="card-product">
-        <%= cl_image_tag request.goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
-        <div class="card-product-infos">
-          <h2><%= request.goat.name %> </h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+  <h2>Your goats' requests:</h2>
+  <% if @requests.empty? %>
+    <p>You didn't add any goat</p>
+  <% else %>
+    <div>
+      <% @requests.each do |request| %>
+        <div class="card-product">
+          <%= cl_image_tag request.goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+          <div class="card-product-infos">
+            <h2><%= request.goat.name %> </h2>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+          </div>
         </div>
-      </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
+

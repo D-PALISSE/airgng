@@ -1,10 +1,11 @@
 .booking-card {
   position: relative;
   width: 300px;
-  height: 380px;
-  margin: 30px 0;
+  height: 355px;
+  margin: 30px auto;
   border-radius: 15px;
   box-shadow: 2px 2px 4px lightgrey;
+  background-color: white;
 
   .card-img-top{
     border-radius: 15px 15px 0px 0px;
@@ -27,33 +28,51 @@
   }
 
   .bookings-dates {
+    font-family: Open Sans;
     font-size: 14px;
     padding-left: 20px;
+
+    strong {
+      font-size: 14px;
+    }
   }
   .validation {
     display: flex;
+    // justify-content: space-around;
     position: absolute;
-    left: 20px;
+    left: 5px;
     bottom: 20px;
-    justify-content: space-around;
+    // margin-right: 30px;
 
+    .status {
+      font-weight: bolder;
+      margin-left: 20px;
+      border-radius: 5px;
+    }
 
     .pending {
-      font-weight: bolder;
-      // color: #ffff84;
-    }
+        color: white;
+        background-color: #FFC65A;
+        padding: 0px 10px;
+      }
 
-    .validate {
-      font-weight: bolder;
-      // color: #81ff7f;
-    }
+    .validated {
+        color: white;
+        background-color: #58d358;
+        padding: 0px 10px;
+      }
 
     .denied {
-      font-weight: bolder;
-      // color: #ff4242;
-    }
+        color: white;
+        background-color: #ff5b5b;
+        padding: 0px 10px;
+      }
   }
 }
+
+// .card-body-booking {
+//   background-color: white;
+// }
 
 .card-product {
   overflow: hidden;
@@ -93,4 +112,24 @@
   padding: 16px;
 }
 
+.results {
+  // margin-bottom: 100px;
 
+  .btn-outline-primary {
+    position: initial;
+    margin-top: 30px;
+  }
+
+  p {
+  margin-left: 5px;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 300px;
+  background-color: lightgrey;
+  margin-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
