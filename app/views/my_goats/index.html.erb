@@ -11,19 +11,19 @@
 <div class="container card-container">
   <div class="row">
     <% @my_goats.each do |goat| %>
-            <%= link_to goat_path(goat) do %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="my-goats-card">
-          <div class="card-picture">
-            <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> <%= goat.name %> </h5>
-            <p class="card-text"> <%= goat.specie.capitalize %> </p>
-            <% end %>
+      <%= link_to goat_path(goat), class: "goat-card-cheptel" do %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="my-goats-card">
+            <div class="card-picture">
+              <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> <%= goat.name %> </h5>
+              <p class="card-text"> <%= goat.specie.capitalize %> </p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
