@@ -9,12 +9,12 @@
   border-color: $pink;
   transition: background 0.3s ease;
   border: 1px solid $pink;
-  
-  &:hover {
-    background: white;
-    color: $pink;
-    text-decoration: none;
-  }
+}
+
+.btn-flat-goat:hover {
+  background: white;
+  color: $pink;
+  text-decoration: none;
 }
 
 // .btn-outline-primary {
