@@ -3,7 +3,14 @@ class GoatsController < ApplicationController
   # before_action :set_goat, only: [:show]
 
   def index
-    @goats = Goat.all
+    if params[:query].present?
+      sql_query = " \
+              goats.address @@ :query \
+            "
+      @goats = Goat.where("goats.address @@ :query", query: "%#{params[:query].split(' ').join(' OR ')}%")
+    else
+      @goats = Goat.all
+    end
   end
 
   def show
