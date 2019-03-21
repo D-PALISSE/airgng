@@ -4,7 +4,7 @@
   <% if @bookings.empty? %>
     <p>You don't have any goat booking yet</p>
     <!-- <div class="btn btn-outline-primary">Book a new Goat</div> -->
-    <%= link_to 'Book a new Goat', goats_path, class: "btn btn-outline-primary book-a-new-goat" %>
+    <%= link_to 'Book a new Goat', goats_path, class: "btn btn-flat book-a-new-goat" %>
   <% else %>
   <!-- <p>for: <strong>Today</strong></p> -->
   <div class="row">
@@ -45,21 +45,31 @@
   <% if @requests.empty? %>
     <p>You don't own any goat yet</p>
     <!-- <div class="btn btn-outline-primary">Add a new Goat</div> -->
-    <%= link_to 'Add a new Goat', new_my_goat_path, class: "btn btn-outline-primary add-a-new-goat" %>
+    <%= link_to 'Add a new Goat', new_my_goat_path, class: "btn btn-flat add-a-new-goat" %>
   <% else %>
     <div>
-      <% @requests.each do |request| %>
+      <% @requests.each do |booking| %>
         <div class="card-product">
-          <%= cl_image_tag request.user.avatar, width: 60, height: 60, crop: :fill %>
+          <%= cl_image_tag booking.user.avatar, width: 60, height: 60, crop: :fill %>
           <div class="card-product-infos">
-            <p class="infos-text"> <strong> <%= request.user.first_name %> </strong>  wants to book your goat
-            <strong> <%= request.goat.name %> </strong>
+            <p class="infos-text"> <strong> <%= booking.user.first_name %> </strong>  <span class="black-typo">wants to book your goat</span>
+            <strong> <%= booking.goat.name %> </strong>
             </p>
-            <p class="infos-dates">From <strong> <%= request.beginning_date %></strong>, To <strong> <%= request.end_date %> </strong> </p>
+            <p class="infos-dates"><span class="black-typo">From </span><strong> <%= booking.beginning_date %></strong><span class="black-typo">, To </span><strong> <%= booking.end_date %> </strong> </p>
           </div>
           <div class="boutons-validation">
-            <button class="btn btn btn-outline-primary" action="">Validate</button>
-            <button class="btn btn btn-outline-primary">Deny</button>
+            <% if booking.status == "pending" %>
+              <%= link_to 'Validate', accept_booking_path(booking), method: :patch, class: "btn btn-flat" %>
+              <%= link_to 'Deny', deny_booking_path(booking), method: :patch, class: "btn btn-flat" %>
+            <% elsif booking.status == "denied" %>
+              <div class="button-container">
+                <div class="status-two denied"> <%= booking.status.capitalize %> </div>
+              </div>
+            <% else %>
+              <div class="button-container">
+                <div class="status-two exception validated"> <%= booking.status.capitalize %> </div>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
