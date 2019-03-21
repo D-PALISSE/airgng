@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'my_goats/new'
-  get 'my_goats/create'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
