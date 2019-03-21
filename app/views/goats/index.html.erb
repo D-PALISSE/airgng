@@ -2,10 +2,10 @@
 <div class="container card-container">
   <div class="results">
   <h2>Available goats</h2>
-  <%= form_tag goats_path, method: :get do %>
+  <%= form_tag goats_path method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control search-bar",
       placeholder: "Filter by city"
     %>
   <% end %>
