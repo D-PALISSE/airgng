@@ -108,15 +108,37 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
+.card-product {
+  display: flex;
+  justify-content: space-around;
 
+  .card-product-infos {
+    margin-top: -8px;
+
+    .infos-text {
+      font-size: 16px;
+    }
+
+    .infos-dates {
+      font-size: 16px;
+    }
+  }
+
+
+
+}
 .results {
-  // margin-bottom: 100px;
+    margin-bottom: 100px;
 
   .btn-outline-primary {
     position: initial;
+  }
+
+  .book-a-new-goat {
+    margin-top: 30px;
+  }
+
+  .add-a-new-goat {
     margin-top: 30px;
   }
 
@@ -130,6 +152,7 @@
   width: 300px;
   background-color: lightgrey;
   margin-left: 20px;
-  margin-top: 40px;
+  // margin-top: 50px;
   margin-bottom: 50px;
 }
+

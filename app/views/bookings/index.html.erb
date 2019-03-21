@@ -1,9 +1,10 @@
 <div class="container card-container">
   <div class="results">
-  <h2>Your goat bookings:</h2>
+  <h2>Your goat bookings</h2>
   <% if @bookings.empty? %>
-    <p>You didn't book any goat</p>
-    <div class="btn btn-outline-primary">Book a new Goat</div>
+    <p>You don't have any goat booking yet</p>
+    <!-- <div class="btn btn-outline-primary">Book a new Goat</div> -->
+    <%= link_to 'Book a new Goat', goats_path, class: "btn btn-outline-primary book-a-new-goat" %>
   <% else %>
   <!-- <p>for: <strong>Today</strong></p> -->
   <div class="row">
@@ -40,21 +41,32 @@
 <div class="line"></div>
 <div class="container card-container">
   <div class="results">
-  <h2>Your goats' requests:</h2>
+  <h2>Your received requests</h2>
   <% if @requests.empty? %>
-    <p>You didn't add any goat</p>
+    <p>You don't own any goat yet</p>
+    <!-- <div class="btn btn-outline-primary">Add a new Goat</div> -->
+    <%= link_to 'Add a new Goat', new_my_goat_path, class: "btn btn-outline-primary add-a-new-goat" %>
   <% else %>
     <div>
       <% @requests.each do |request| %>
         <div class="card-product">
-          <%= cl_image_tag request.goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+          <%= cl_image_tag request.user.avatar, width: 60, height: 60, crop: :fill %>
           <div class="card-product-infos">
-            <h2><%= request.goat.name %> </h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
+            <p class="infos-text"> <strong> <%= request.user.first_name %> </strong>  wants to book your goat
+            <strong> <%= request.goat.name %> </strong>
+            </p>
+            <p class="infos-dates">From <strong> <%= request.beginning_date %></strong>, To <strong> <%= request.end_date %> </strong> </p>
+          </div>
+          <div class="boutons-validation">
+            <button class="btn btn btn-outline-primary" action="">Validate</button>
+            <button class="btn btn btn-outline-primary">Deny</button>
           </div>
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
+
+<!-- if click on validate, call method accept booking status change to validated (in the user booking index card)
+if click on deny, booking status change to denied (in the user booking index card) -->
 
