@@ -16,7 +16,7 @@
       <div class="col-xl-8 col-lg-8 col-md-6 col-xs-12">
         <div class="card-show-goat csg-2">
           <div class="card-show-goat-details">
-            <%= cl_image_tag @goat.owner.avatar, class: "avatar-bordered-large-owner" %>
+            <%= cl_image_tag @goat.owner.avatar, class: "avatar-bordered-large-owner avatar" %>
             <h2 class="card-title-show"> <%= @goat.name %></h2>
             <p class="card-text-show"><%= @goat.specie.capitalize %> </p>
             <p class="card-text-show card-location-show"><i class="fas fa-map-marker-alt"></i> <%= @goat.address.capitalize %> </p>

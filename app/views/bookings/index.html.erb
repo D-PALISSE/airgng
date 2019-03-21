@@ -3,10 +3,8 @@
   <h2>Your goat bookings</h2>
   <% if @bookings.empty? %>
     <p>You don't have any goat booking yet</p>
-    <!-- <div class="btn btn-outline-primary">Book a new Goat</div> -->
     <%= link_to 'Book a new Goat', goats_path, class: "btn btn-flat book-a-new-goat" %>
   <% else %>
-  <!-- <p>for: <strong>Today</strong></p> -->
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
@@ -42,15 +40,18 @@
 <div class="container card-container">
   <div class="results goat-listing">
   <h2>Your received requests</h2>
-  <% if @requests.empty? %>
-    <p>You don't own any goat yet</p>
+  <% if @goats.empty? %>
+    <p>You don't own any goat yet.</p>
     <!-- <div class="btn btn-outline-primary">Add a new Goat</div> -->
     <%= link_to 'Add a new Goat', new_my_goat_path, class: "btn btn-flat add-a-new-goat" %>
+    <% elsif @requests.empty? %>
+    <p>You did'nt receive any request yet.</p>
+    <!-- <div class="btn btn-outline-primary">Add a new Goat</div> -->
   <% else %>
     <div>
       <% @requests.each do |booking| %>
         <div class="card-product">
-          <%= cl_image_tag booking.user.avatar, width: 60, height: 60, crop: :fill %>
+          <%= cl_image_tag booking.user.avatar,class: 'avatar-large' %>
           <div class="card-product-infos">
             <p class="infos-text"> <strong> <%= booking.user.first_name %> </strong>  <span class="black-typo">wants to book your goat</span>
             <strong> <%= booking.goat.name %> </strong>
