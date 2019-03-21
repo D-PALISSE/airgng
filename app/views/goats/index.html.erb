@@ -4,10 +4,10 @@
 <!--   <h2>Search results for:</h2>
   <p><strong>Nantes</strong>, from 05/04/2019 to 10/04/2019</p> -->
   <h2>Available goats</h2>
-  <%= form_tag goats_path, method: :get do %>
+  <%= form_tag goats_path method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control search-bar",
       placeholder: "Filter by city"
     %>
   <% end %>
