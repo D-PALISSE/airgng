@@ -56,9 +56,9 @@ goat_12 =Goat.create(name: "Angela", specie: "provençale" ,
   address: "Ajaccio", owner: thierry, photo:File.open(Rails.root.join('db/fixtures/goats/chevre_12.jpg')), daily_price: 25)
 
 Booking.create(user: matthias, goat: goat_6, status: "pending" , beginning_date: "25/03/2019", end_date: "27/03/2019")
-Booking.create(user: matthias, goat: goat_3, status: "validate" , beginning_date: "30/03/2019", end_date: "04/04/2019")
+Booking.create(user: matthias, goat: goat_3, status: "accepted" , beginning_date: "30/03/2019", end_date: "04/04/2019")
 Booking.create(user: matthias, goat: goat_12, status: "denied" , beginning_date: "25/03/2019", end_date: "27/03/2019")
 Booking.create(user: nassim, goat: goat_8, status: "pending" , beginning_date: "22/03/2019", end_date: "23/03/2019")
-Booking.create(user: nassim, goat: goat_12, status: "validate" , beginning_date: "25/03/2019", end_date: "27/03/2019" )
+Booking.create(user: nassim, goat: goat_12, status: "accepted" , beginning_date: "25/03/2019", end_date: "27/03/2019" )
 
 puts 'Finished!'
