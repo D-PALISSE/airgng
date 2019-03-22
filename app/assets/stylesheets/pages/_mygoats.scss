@@ -31,13 +31,18 @@
   }
 }
 
+.my-goat-title-container {
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .goat-card-cheptel:hover {
   text-decoration: none;
 }
 
 .mygoats-title {
-  position: relative;
-    margin-top: 25px;
   h1 {
     color: $pink
   }
@@ -48,10 +53,9 @@
 }
 
 .link-to-new-goat {
-  position: absolute;
-  right: 20px;
-  top: 5px;
+  margin-right: 20px;
 }
+
 
 .btn-flat-cheptel {
   color: white;
