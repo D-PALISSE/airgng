@@ -29,10 +29,10 @@
   width: 300px;
   height: 330px;
   margin: 30px 0;
-  border-radius: 15px;
+  border-radius: 8px;
   box-shadow: 2px 2px 4px lightgrey;
   .card-img-top{
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
   }
 
 }
@@ -75,20 +75,7 @@
   // align-items: flex-end;
 }
 
-// .btn-outline-primary {
-//   border-radius: 8px;
-//   position: absolute;
-//   bottom: 16px;
-//   right: 20px;
-//   background-color: $pink;
-//   color: white;
-//   border-color: #E27E7E;
-//   &:hover {
-//   color: $pink;
-//   border-color: #E27E7E;
-//   background-color: white;
-//   }
-// }
+
 
 
 
