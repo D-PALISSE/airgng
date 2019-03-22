@@ -52,8 +52,9 @@
 
 .button-container {
   width: 100px;
-  display: flex;
-  align-items: center;
+  position: absolute;
+  top: 25px;
+  right: 20px;
 }
 
 .status-two {
@@ -92,11 +93,9 @@
   max-width: 800px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
   margin-top: 40px;
   margin-bottom: 30px;
-  justify-content: space-around;
+  position: relative;
 
   .card-img-top {
   height: 100%;
@@ -106,19 +105,39 @@
 
   .card-product-infos {
     margin-top: -8px;
+    position: relative;
 
-    .infos-text {
-      font-size: 16px;
-    }
 
     .infos-dates {
       font-size: 16px;
     }
   }
+}
+.resquest-avatar {
+  position: absolute;
+  top: 18px;
+  left: 55px;
+}
 
+.info-text {
+  font-size: 16px;
+  position: absolute;
+  left: 260px;
+  top: 15px;
 }
 
 
+.dates-bookings {
+  position: absolute;
+  top: 50px;
+  left: 260px;
+}
+
+.total-amount-booking-index {
+  position: absolute;
+  top: 80px;
+  left: 260px;
+}
 
 .card-product h2 {
   font-size: 16px;
@@ -159,3 +178,39 @@
   margin-bottom: 50px;
 }
 
+.boutons-validation {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  display: flex;
+}
+
+.button-valid-1 {
+  border: 1px solid lightgrey;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  a {
+    color: green;
+    font-size: 15px;
+  }
+}
+
+.button-valid-2 {
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  width: 50px;
+  height: 50px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  a {
+    color: red;
+    font-size: 15px;
+  }
+}
