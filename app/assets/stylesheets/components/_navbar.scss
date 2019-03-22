@@ -15,6 +15,7 @@
 }
 
 .navbar-lewagon .navbar-collapse {
+  margin-right: 10px;
   flex-grow: 0;
 }
 
@@ -25,6 +26,10 @@
 .color-nav {
   color: #E27E7E;
   font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.wrapper {
+  padding-left: 20px;
 }
 
 .goat-logo {

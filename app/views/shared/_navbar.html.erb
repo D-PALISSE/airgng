@@ -1,44 +1,46 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to goats_path, class: "navbar-brand" do %>
-  <%= image_tag "goat_logo.png", class: "goat-logo" %> <span class="color-nav">AirGnG</span>
-    <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <% if params[:controller] == "my_goats" && params[:action] == "index" %>
-          <% mygoats_class = "active"  %>
-        <% else %>
-          <% mygoats_class = "inactive" %>
-        <% end %>
-        <li class="nav-item <%= mygoats_class %>">
-          <%= link_to "My goats", my_goats_path, class: "nav-link" %>
-        </li>
-        <% if params[:controller] == "bookings" && params[:action] == "index" %>
-          <% booking_class = "active"  %>
-        <% else %>
-          <% booking_class = "inactive" %>
-        <% end %>
-        <li class="nav-item <%= booking_class %> my-goats-link">
-          <%= link_to "Bookings", bookings_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.avatar.url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
-             <%=  link_to "Security", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-      <li class="color-nav nav-link"><%= link_to "Rent your goat", new_my_goat_path %></li>
-        <li class="nav-item color-nav">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+  <div class="container card-container wrapper">
+    <%= link_to goats_path, class: "navbar-brand" do %>
+    <%= image_tag "goat_logo.png", class: "goat-logo" %> <span class="color-nav">AirGnG</span>
       <% end %>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <% if params[:controller] == "my_goats" && params[:action] == "index" %>
+            <% mygoats_class = "active"  %>
+          <% else %>
+            <% mygoats_class = "inactive" %>
+          <% end %>
+          <li class="nav-item <%= mygoats_class %>">
+            <%= link_to "My goats", my_goats_path, class: "nav-link" %>
+          </li>
+          <% if params[:controller] == "bookings" && params[:action] == "index" %>
+            <% booking_class = "active"  %>
+          <% else %>
+            <% booking_class = "inactive" %>
+          <% end %>
+          <li class="nav-item <%= booking_class %> my-goats-link">
+            <%= link_to "Bookings", bookings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= cl_image_tag current_user.avatar.url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
+               <%=  link_to "Security", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+        <li class="color-nav nav-link"><%= link_to "Rent your goat", new_my_goat_path %></li>
+          <li class="nav-item color-nav">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

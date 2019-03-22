@@ -1,39 +1,41 @@
-
-<div class="container card-container">
-  <div class="results">
-  <h2>Available goats</h2>
-  <%= form_tag goats_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control search-bar",
-      placeholder: "Filter by city"
-    %>
-  <% end %>
-  <!-- Si on a le temps, faire du JS pour modifier le place holder et le H2 après recherche -->
-  <!-- <p>for: <strong>Today</strong></p> -->
-</div>
-  <div class="row">
-    <% @goats.each do |goat| %>
-      <%= link_to goat_path(goat.id), class: 'index-link' do %>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-          <div class="card">
-            <div class="card-picture">
-              <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"> <%= goat.name %> </h5>
-              <p> <%= goat.specie.capitalize %> </p>
-              <p class="card-location"><i class="fas fa-map-marker-alt"></i> <%= goat.address.capitalize %> </p>
-              <div class="call-to-action">
-                <h5 class="daily-price"> <span><%= goat.daily_price %></span> €/per day</h5>
-                <%= link_to "See details", goat_path(goat.id), class: "btn-flat btn-goat" %>
+<div class="wrapper">
+  <div class="container card-container">
+    <div class="results">
+    <h2>Available goats</h2>
+    <%= form_tag goats_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-bar",
+        placeholder: "Filter by city"
+      %>
+    <% end %>
+    <!-- Si on a le temps, faire du JS pour modifier le place holder et le H2 après recherche -->
+    <!-- <p>for: <strong>Today</strong></p> -->
+  </div>
+    <div class="row">
+      <% @goats.each do |goat| %>
+        <%= link_to goat_path(goat.id), class: 'index-link' do %>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <div class="card-picture">
+                <%= cl_image_tag goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"> <%= goat.name %> </h5>
+                <p> <%= goat.specie.capitalize %> </p>
+                <p class="card-location"><i class="fas fa-map-marker-alt"></i> <%= goat.address.capitalize %> </p>
+                <div class="call-to-action">
+                  <h5 class="daily-price"> <span><%= goat.daily_price %></span> €/per day</h5>
+                  <%= link_to "See details", goat_path(goat.id), class: "btn-flat btn-goat" %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
+
 
 <!-- <i class="fas fa-map-marker-alt"></i> Map marker component -->
