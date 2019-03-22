@@ -55,10 +55,10 @@ goat_12 =Goat.create(name: "Angela", specie: "provençale" ,
   description: "With a strong chewing ability and an exceptional metabolism, our goat will clean your garden and give you milk to enhance your culinary tastes." ,
   address: "Ajaccio", owner: thierry, photo:File.open(Rails.root.join('db/fixtures/goats/chevre_12.jpg')), daily_price: 25)
 
-Booking.create(user: matthias, goat: goat_6, status: "pending" , beginning_date: "25/03/2019", end_date: "27/03/2019")
-Booking.create(user: matthias, goat: goat_3, status: "accepted" , beginning_date: "30/03/2019", end_date: "04/04/2019")
-Booking.create(user: matthias, goat: goat_12, status: "denied" , beginning_date: "25/03/2019", end_date: "27/03/2019")
-Booking.create(user: nassim, goat: goat_8, status: "pending" , beginning_date: "22/03/2019", end_date: "23/03/2019")
-Booking.create(user: nassim, goat: goat_12, status: "accepted" , beginning_date: "25/03/2019", end_date: "27/03/2019" )
+Booking.create(user: matthias, goat: goat_6, status: "pending" , beginning_date: "25/03/2019", end_date: "27/03/2019", total_amount: 69)
+Booking.create(user: matthias, goat: goat_3, status: "accepted" , beginning_date: "30/03/2019", end_date: "04/04/2019", total_amount: 120)
+Booking.create(user: matthias, goat: goat_12, status: "denied" , beginning_date: "25/03/2019", end_date: "27/03/2019", total_amount: 75)
+Booking.create(user: nassim, goat: goat_8, status: "pending" , beginning_date: "22/03/2019", end_date: "23/03/2019", total_amount: 44)
+Booking.create(user: nassim, goat: goat_12, status: "accepted" , beginning_date: "25/03/2019", end_date: "27/03/2019", total_amount: 75)
 
 puts 'Finished!'
