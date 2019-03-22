@@ -15,11 +15,11 @@ flatpickr(".datepicker", {
       const totalAmountSpan = document.getElementById('total_amount')
 
       const beginningDate = selectedDates[0]
-      const endDate = selectedDates[selectedDates.length-1]
+      const endDate = selectedDates[1]
 
       const goatDailyPrice = instance.element.dataset.dailyPrice
 
-      const daysCount = (endDate - beginningDate) / 60 / 60 / 24 / 1000
+      const daysCount = (endDate - beginningDate) / 1000 / 60 / 60 / 24
 
       totalAmountSpan.innerText = daysCount * goatDailyPrice
       const beginningDateInput = document.getElementById('booking_beginning_date')
