@@ -1,25 +1,58 @@
 <div class="container mt-5">
-  <div class="col-sm">
-
-<%= simple_form_for [@goat, @booking] do |f| %>
-  You're on your way to book <%= @goat.name %>
-
-  <div class="form-inputs">
-    <input type="text" class="datepicker" data-daily-price='<%= @goat.daily_price %>'>
-    <%= f.input :beginning_date, as: :hidden %>
-    <%= f.input :end_date, as: :hidden %>
+  <div class="results">
+    <h2>Complete your booking</h2>
   </div>
-
   <div>
-    Total amount : <span id='total_amount'>0</span> €
+    You're on your way to book <%= @goat.name %>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, 'Send booking request', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+  <div class="container">
+    <div class="flex-box"> <!-- ICI JE FAIS UNE FLEXBOX POUR AVOIR DESCRIPTION CHEVRE ET CARD BOOKING COTE A COTE -->
+          <div class="card"> <!-- ICI LA DIV QUI CONTIENT LES DETAILS DE LA CHEVRE -->
+            <div class="card-picture">
+              <%= cl_image_tag @goat.photo, width: 300, height: 200, crop: :fill, class: 'card-img-top' %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> <%= @goat.name %> </h5>
+              <p> <%= @goat.specie.capitalize %> </p>
+              <p class="card-location"><i class="fas fa-map-marker-alt"></i> <%= @goat.address.capitalize %> </p>
+              <div class="call-to-action">
+                <h5 class="daily-price"> <span><%= @goat.daily_price %></span> €/per day</h5>
+              </div>
+            </div>
+          </div>
+
+        <div class="card card-body calendar"> <!-- ICI LA DIV QUI CONTIENT LE CALENDRIER DE BOOKING -->
+          <strong>Choose your dates</strong>
+          <br>
+          <%= simple_form_for [@goat, @booking] do |f| %>
+            <div class="form-inputs">
+              <input type="text" class="datepicker" data-daily-price='<%= @goat.daily_price %>'>
+              <%= f.input :beginning_date, as: :hidden %>
+              <%= f.input :end_date, as: :hidden %>
+            </div>
+
+            <div>
+              Total amount : <span id='total_amount'>0</span> €
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, 'Send booking request', class: 'btn-flat' %>
+            </div>
+          <% end %>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <div class='card-body card-owner'> <!-- ICI LA TROISIEME ET DERNIERE DIV QUI CONTIENT LES DETAILS DU USER -->
+      <strong>Owner Details</strong>
+      <br>
+      <!-- <img class="avatar-large" src="https://www.laregion.ch/wp-content/uploads/1-329.jpg" alt="Owner Picture"> -->
+      <%= cl_image_tag @owner.avatar, width: 200, height: 200, crop: :fill, class: 'avatar-large' %>
+      <br>
+      <strong><%= "#{@owner.first_name} #{@owner.last_name}" %></strong>
+      <br>
+      <%= @owner.description %>
+    </div>
   </div>
 </div>
 
-<!-- We also need to print the Total amount in the database -->
-<!-- Add eventlistener if date changes -->
-<!-- input_html: { class: "datepicker", data: {price: @goat.daily_price}} -->
+<!-- Virer les commentaires quand c'est finish -->

@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @goat = Goat.find(params[:goat_id])
+    @owner = User.find(@goat.user_id)
   end
 
   def create
