@@ -1,7 +1,7 @@
 .card-owner {
   width: 300px;
   height: 330px;
-  margin: 30px 0;
+  margin: 30px 30px;
   border-radius: 15px;
   box-shadow: 2px 2px 4px lightgrey;
   background-color: white;
@@ -14,9 +14,8 @@
 }
 
 .flex-box {
-  ;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: top;
 }
 
