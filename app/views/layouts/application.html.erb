@@ -6,6 +6,14 @@
     <link rel="icon" href=<%= image_path "goat_logo.png" %> />
     <title>AirGnG : Rent a goat</title>
     <%= csrf_meta_tags %>
+
+    <meta property="og:site_name" content="AirGnG - Location de chèvre" />
+    <meta property="og:title" content="AirGnG - Location de chèvre" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.airgng.fr" />
+    <meta property="og:image" content="https://image.noelshack.com/fichiers/2019/12/6/1553339827-oleg-ivanov-1158252-unsplash.jpg" />
+    <meta property="og:description" content="Marre de tondre la pelouse ? Loue une chèvre !" />
+
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %> <!-- NEW! -->
